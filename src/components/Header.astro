@@ -1,0 +1,84 @@
+---
+const navItems = [
+    { href: "/", label: "ホーム", en: "Home" },
+    { href: "/flute", label: "フルート", en: "Flute" },
+    { href: "/piano", label: "ピアノ", en: "Piano" },
+    { href: "/voice", label: "声楽", en: "Voice" },
+    { href: "/sax", label: "サックス", en: "Sax" },
+    { href: "/guitar", label: "ギター・ウクレレ", en: "Guitar" },
+    { href: "/#access", label: "アクセス", en: "Access" }, // map
+];
+---
+
+<header
+    class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100"
+>
+    <div class="container mx-auto px-4 py-4">
+        <div
+            class="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4"
+        >
+            <!-- Logo Area -->
+            <a href="/" class="text-center lg:text-left group block">
+                <h1
+                    class="text-2xl md:text-3xl font-bold text-primary tracking-wide group-hover:opacity-80 transition-opacity"
+                >
+                    ムジーク シューレ 音楽教室
+                </h1>
+                <p
+                    class="text-xs md:text-sm text-gray-600 mt-1 font-medium bg-gray-100 inline-block px-2 py-1 rounded-full"
+                >
+                    八王子・片倉駅徒歩5分 🎵 アットホームな音楽教室
+                </p>
+            </a>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4">
+                <a
+                    href="http://form1.fc2.com/form/?id=880927"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-gradient-to-r from-secondary to-green-600 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-green-200 transition-all transform hover:scale-105 hover:shadow-xl flex items-center gap-2"
+                >
+                    <span>無料体験レッスン申込</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="w-full overflow-x-auto pb-1 scrollbar-hide">
+            <ul
+                class="flex justify-start lg:justify-center items-center space-x-1 min-w-max mx-auto px-2"
+            >
+                {
+                    navItems.map((item) => (
+                        <li>
+                            <a
+                                href={item.href}
+                                class="group flex flex-col items-center px-4 py-2 rounded-lg hover:bg-surface text-gray-700 hover:text-primary transition-all duration-300 relative overflow-hidden"
+                            >
+                                <span class="font-bold relative z-10">
+                                    {item.label}
+                                </span>
+                                <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase group-hover:text-accent transition-colors">
+                                    {item.en}
+                                </span>
+                                <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</header>

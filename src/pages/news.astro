@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="お知らせ | ムジーク・シューレ音楽教室">
+    <div class="bg-surface py-12 md:py-20 min-h-screen">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h1 class="text-3xl md:text-4xl font-bold text-primary">
+                    お知らせ
+                </h1>
+                <p class="text-gray-500 mt-2 font-medium tracking-wide">
+                    News & Topics
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Article 1 -->
+                <article
+                    class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                        <time class="text-gray-400 font-mono font-bold"
+                            >2025.01.01</time
+                        >
+                        <span
+                            class="bg-red-100 text-red-600 px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider"
+                            >Information</span
+                        >
+                    </div>
+                    <h2
+                        class="text-xl md:text-2xl font-bold text-gray-800 mb-4"
+                    >
+                        春季生徒募集中
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        新しい季節に、新しい趣味を始めてみませんか？<br />
+                        ムジーク・シューレ音楽教室では、春の新規生徒様を募集しております。<br
+                        />
+                        初心者から経験者まで、お一人おひとりに合わせたレッスンをご提案いたします。
+                    </p>
+                    <div class="flex gap-4">
+                        <a
+                            href="http://form1.fc2.com/form/?id=880927"
+                            target="_blank"
+                            class="inline-flex items-center text-primary font-bold hover:underline group"
+                        >
+                            体験レッスンを申し込む
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+                            >
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article
+                    class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                        <time class="text-gray-400 font-mono font-bold"
+                            >2024.12.01</time
+                        >
+                        <span
+                            class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider"
+                            >Media</span
+                        >
+                    </div>
+                    <h2
+                        class="text-xl md:text-2xl font-bold text-gray-800 mb-4"
+                    >
+                        講師演奏動画をYouTubeで公開しました
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        当教室の講師による演奏動画をYouTubeチャンネルにて公開しております。<br
+                        />
+                        ご自宅での練習の参考や、教室の雰囲気づくりにお役立てください。
+                    </p>
+                    <a
+                        href="https://www.youtube.com/@matsumusik"
+                        target="_blank"
+                        class="inline-flex items-center text-primary font-bold hover:underline group"
+                    >
+                        YouTubeチャンネルを見る
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+                        >
+                    </a>
+                </article>
+
+                <!-- Article 3 -->
+                <article
+                    class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
+                        <time class="text-gray-400 font-mono font-bold"
+                            >2024.07.15</time
+                        >
+                        <span
+                            class="bg-green-100 text-green-600 px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider"
+                            >Event</span
+                        >
+                    </div>
+                    <h2
+                        class="text-xl md:text-2xl font-bold text-gray-800 mb-4"
+                    >
+                        夏の発表会を開催しました
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        2024年7月、恒例の夏季発表会を開催いたしました。<br />
+                        ピアノ、フルート、声楽など、多くの生徒様が日頃の成果を披露されました。<br
+                        />
+                        ご来場いただいた皆様、ありがとうございました。
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

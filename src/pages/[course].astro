@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { courses } from "../data/courses";
+import { Image } from "astro:assets";
+
+export function getStaticPaths() {
+    return courses.map((course) => ({
+        params: { course: course.id },
+        props: { course },
+    }));
+}
+
+const { course } = Astro.props;
+---
+
+<BaseLayout title={`${course.title} | ムジーク・シューレ音楽教室`}>
+    <div class="bg-surface min-h-screen py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <!-- Header -->
+            <div class="text-center mb-12 animate-fade-in-up">
+                <span
+                    class="text-secondary font-bold tracking-widest uppercase text-sm md:text-base"
+                    >{course.en}</span
+                >
+                <h1 class="text-3xl md:text-5xl font-bold text-primary mt-2">
+                    {course.title} レッスン
+                </h1>
+            </div>
+
+            <!-- Main Content -->
+            <div
+                class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
+            >
+                <!-- Banner Image & Youtube -->
+                <div
+                    class="grid md:grid-cols-2 bg-gray-50 border-b border-gray-100"
+                >
+                    <div
+                        class="relative h-64 md:h-auto min-h-[300px] flex items-center justify-center bg-white p-8"
+                    >
+                        {
+                            course.image ? (
+                                <Image
+                                    src={course.image}
+                                    alt={course.title}
+                                    class="max-w-full max-h-full object-contain shadow-md rounded-lg"
+                                    width={600}
+                                    height={400}
+                                />
+                            ) : (
+                                <div class="text-6xl text-gray-300">🎵</div>
+                            )
+                        }
+                    </div>
+
+                    <div
+                        class="relative bg-black flex items-center justify-center"
+                    >
+                        {
+                            course.youtubeId ? (
+                                <iframe
+                                    class="w-full h-full absolute inset-0"
+                                    src={`https://www.youtube.com/embed/${course.youtubeId}`}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                />
+                            ) : (
+                                <div class="text-white text-center p-8">
+                                    <span class="text-4xl mb-4 block">🎵</span>
+                                    <p>動画準備中...</p>
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-10">
+                    <!-- Description -->
+                    <div class="prose max-w-none">
+                        <h2
+                            class="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-secondary pl-4"
+                        >
+                            レッスンについて
+                        </h2>
+                        <p
+                            class="text-lg text-gray-600 leading-relaxed font-medium"
+                        >
+                            {course.description}
+                        </p>
+                    </div>
+
+                    <!-- Features & Info -->
+                    <div
+                        class="grid md:grid-cols-2 gap-8 bg-surface/50 p-6 rounded-2xl"
+                    >
+                        <div>
+                            <h3
+                                class="font-bold text-gray-800 mb-4 flex items-center gap-2"
+                            >
+                                <span class="text-xl text-primary">✓</span> 特徴・システム
+                            </h3>
+                            <ul class="space-y-3">
+                                {
+                                    course.features.map((feature) => (
+                                        <li class="flex items-start gap-3 text-gray-700 bg-white p-3 rounded-lg shadow-sm">
+                                            <span class="text-secondary mt-0.5">
+                                                •
+                                            </span>
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3
+                                    class="font-bold text-gray-800 mb-2 flex items-center gap-2"
+                                >
+                                    <span class="text-xl text-primary">¥</span> 料金
+                                </h3>
+                                <p class="text-2xl font-bold text-accent">
+                                    {course.price}
+                                </p>
+                            </div>
+
+                            {
+                                course.instructor && (
+                                    <div>
+                                        <h3 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                            <span class="text-xl text-primary">
+                                                👤
+                                            </span>{" "}
+                                            講師
+                                        </h3>
+                                        <p class="text-gray-800 font-bold text-lg">
+                                            {course.instructor}
+                                        </p>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="pt-8 text-center">
+                        <p class="text-gray-600 mb-6">
+                            まずは無料体験レッスンで、教室の雰囲気を体感してください。
+                        </p>
+                        <a
+                            href="http://form1.fc2.com/form/?id=880927"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-red-800 text-white font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                        >
+                            <span>体験レッスンを申し込む</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                ><path
+                                    fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path></svg
+                            >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>

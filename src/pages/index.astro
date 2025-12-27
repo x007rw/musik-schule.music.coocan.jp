@@ -1,16 +1,269 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import topImage from "../assets/top1.jpg";
 
+const features = [
+	{
+		icon: "🎹",
+		title: "完全個人レッスン",
+		desc: "生徒さん一人ひとりのペースに合わせた、丁寧なマンツーマン指導を行います。",
+	},
+	{
+		icon: "🚉",
+		title: "駅チカ・好立地",
+		desc: "JR横浜線「片倉駅」から徒歩5分。通いやすい立地です。",
+	},
+	{
+		icon: "🚗",
+		title: "無料駐車場あり",
+		desc: "お車でお越しの方も安心。専用の駐車場を完備しています。",
+	},
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="八王子・片倉の音楽教室 ムジーク・シューレ">
+	<div class="space-y-20 pb-20">
+		<!-- Hero Section -->
+		<section class="relative bg-surface py-16 md:py-24 overflow-hidden">
+			<div
+				class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-100/50 via-transparent to-transparent opacity-70 pointer-events-none"
+			>
+			</div>
+
+			<div
+				class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 relative z-10"
+			>
+				<div class="md:w-1/2 space-y-8 text-center md:text-left">
+					<div
+						class="inline-block bg-white/80 backdrop-blur border border-red-100 rounded-full px-4 py-1 text-primary text-sm font-bold mb-2 shadow-sm animate-fade-in-up"
+					>
+						🎵 2025年 生徒募集中
+					</div>
+
+					<h2
+						class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight font-sans tracking-tight"
+					>
+						音楽と共に...<br />
+						<span class="text-gray-800">心豊かな人生を。</span>
+					</h2>
+
+					<p
+						class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto md:mx-0"
+					>
+						八王子「横浜線」片倉駅徒歩５分。<br />
+						アットホームな音楽教室です。
+					</p>
+
+					<div
+						class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start"
+					>
+						<a
+							href="http://form1.fc2.com/form/?id=880927"
+							target="_blank"
+							class="bg-gradient-to-r from-secondary to-green-600 text-white font-bold py-4 px-10 rounded-full shadow-xl shadow-green-200 hover:shadow-2xl transform hover:-translate-y-1 transition-all text-lg text-center"
+						>
+							体験レッスンに申し込む
+						</a>
+						<a
+							href="#features"
+							class="bg-white text-gray-700 font-bold py-4 px-10 rounded-full shadow-md hover:shadow-lg border border-gray-100 transition-all text-center"
+						>
+							教室の特徴を見る
+						</a>
+					</div>
+				</div>
+
+				<div class="md:w-1/2 flex justify-center perspective-1000">
+					<div
+						class="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-700 ease-out border-8 border-white"
+					>
+						<Image
+							src={topImage}
+							alt="ムジーク・シューレ音楽教室"
+							class="w-full h-auto object-cover scale-105 hover:scale-110 transition-transform duration-1000"
+						/>
+
+						<!-- Floating Badge -->
+						<div
+							class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-full flex items-center justify-center text-white font-bold shadow-lg border-4 border-white z-20 hidden md:flex animate-bounce-slow"
+						>
+							<span
+								class="text-center text-sm leading-tight transform -rotate-12"
+								>初心者<br />大歓迎!</span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- News Section -->
+		<section class="container mx-auto px-4">
+			<div
+				class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 relative overflow-hidden"
+			>
+				<div class="absolute top-0 left-0 w-2 h-full bg-secondary">
+				</div>
+
+				<div
+					class="flex items-end justify-between mb-8 border-b border-gray-100 pb-4"
+				>
+					<h3
+						class="text-2xl font-bold text-gray-800 flex items-center gap-2"
+					>
+						<span class="text-3xl">📣</span> お知らせ
+					</h3>
+					<a
+						href="/news"
+						class="text-sm text-secondary font-bold hover:underline"
+						>過去のお知らせ &rarr;</a
+					>
+				</div>
+
+				<div class="grid gap-6">
+					<article
+						class="group flex flex-col md:flex-row gap-6 hover:bg-surface/50 p-4 rounded-xl transition-colors"
+					>
+						<div class="md:w-40 flex-shrink-0">
+							<span
+								class="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mb-2"
+								>NEW</span
+							>
+							<div class="font-bold text-gray-400 text-sm">
+								2025.01
+							</div>
+						</div>
+						<div class="flex-1">
+							<h4
+								class="font-bold text-lg mb-2 group-hover:text-primary transition-colors"
+							>
+								春季生徒募集
+							</h4>
+							<p class="text-gray-600 line-clamp-2">
+								無料体験レッスン・レッスン見学受付中です。新しい季節に新しい趣味をはじめてみませんか？
+							</p>
+						</div>
+					</article>
+
+					<article
+						class="group flex flex-col md:flex-row gap-6 hover:bg-surface/50 p-4 rounded-xl transition-colors"
+					>
+						<div class="md:w-40 flex-shrink-0">
+							<span
+								class="inline-block bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-2"
+								>Media</span
+							>
+							<div class="font-bold text-gray-400 text-sm">
+								Youtube
+							</div>
+						</div>
+						<div class="flex-1">
+							<h4 class="font-bold text-lg mb-2">
+								<a
+									href="https://www.youtube.com/@matsumusik"
+									target="_blank"
+									class="text-gray-800 group-hover:text-primary transition-colors"
+									>講師演奏動画を公開しました</a
+								>
+							</h4>
+							<p class="text-gray-600">
+								教室の講師による演奏動画やお知らせ配信中！ぜひチャンネル登録をお願いします。
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features -->
+		<section id="features" class="bg-gray-50 py-20 relative">
+			<div class="container mx-auto px-4 relative z-10">
+				<div class="text-center max-w-2xl mx-auto mb-16">
+					<h3
+						class="text-secondary font-bold tracking-widest uppercase mb-2"
+					>
+						Features
+					</h3>
+					<h4 class="text-3xl md:text-4xl font-bold text-gray-800">
+						ムジーク・シューレが選ばれる理由
+					</h4>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8 text-center px-4">
+					{
+						features.map((feature) => (
+							<div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+								<div class="w-20 h-20 mx-auto bg-surface rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+									{feature.icon}
+								</div>
+								<h4 class="text-xl font-bold mb-4 text-gray-800">
+									{feature.title}
+								</h4>
+								<p class="text-gray-600 leading-relaxed">
+									{feature.desc}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- Map & Access -->
+		<section id="access" class="py-16">
+			<div class="container mx-auto px-4">
+				<div
+					class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+				>
+					<div
+						class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center bg-primary text-white space-y-8"
+					>
+						<div>
+							<h3 class="text-3xl font-bold mb-2">Access</h3>
+							<p class="text-red-200">教室へのアクセス</p>
+						</div>
+
+						<div class="space-y-4">
+							<div class="flex items-start gap-4">
+								<span class="text-2xl mt-1">📍</span>
+								<p class="text-lg">
+									〒192-0914<br />東京都八王子市片倉町1166-3
+								</p>
+							</div>
+							<div class="flex items-center gap-4">
+								<span class="text-2xl">📞</span>
+								<p class="text-2xl font-bold tracking-widest">
+									042-637-7035
+								</p>
+							</div>
+							<div class="flex items-center gap-4">
+								<span class="text-2xl">🚉</span>
+								<p class="text-lg">JR横浜線「片倉駅」徒歩5分</p>
+							</div>
+						</div>
+
+						<a
+							href="https://goo.gl/maps/8XyExample"
+							target="_blank"
+							class="inline-block bg-white text-primary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition shadow-lg text-center"
+						>
+							Google Mapで見る
+						</a>
+					</div>
+
+					<div class="md:w-1/2 min-h-[400px] bg-gray-200 relative">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.064567439366!2d139.3400582762512!3d35.650838131637715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191e3b680587d1%3A0xc48622c7a760a006!2z44CSMTkyLTA5MTQg5p2x5Lqs6YO95YWr546L5a2Q5biC54mH5YCJ55S677yR77yR77yW77yW4oiS77yT!5e0!3m2!1sja!2sjp!4v1703698000000!5m2!1sja!2sjp"
+							class="absolute inset-0 w-full h-full border-0"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						>
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</BaseLayout>
